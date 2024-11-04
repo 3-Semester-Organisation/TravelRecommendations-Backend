@@ -1,4 +1,4 @@
-package com.example.chatgptjokes.entity;
+package godevenner.travelrecommendationsbackend.entity;
 
 
 import jakarta.persistence.Entity;

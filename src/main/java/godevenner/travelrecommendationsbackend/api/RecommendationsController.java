@@ -1,16 +1,17 @@
-package com.example.chatgptjokes.api;
+package godevenner.travelrecommendationsbackend.api;
 
-import com.example.chatgptjokes.dtos.MyResponse;
-import com.example.chatgptjokes.service.OpenAiService;
+import godevenner.travelrecommendationsbackend.dtos.MyResponse;
+import godevenner.travelrecommendationsbackend.service.OpenAiService;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * This class handles fetching a joke via the ChatGPT API
  */
 @RestController
+//Todo edit this at some point
 @RequestMapping("/api/v1/joke")
 @CrossOrigin(origins = "*")
-public class JokeController {
+public class RecommendationsController {
 
   private final OpenAiService service;
 
@@ -28,7 +29,7 @@ public class JokeController {
    * The controller called from the browser client.
    * @param service
    */
-  public JokeController(OpenAiService service) {
+  public RecommendationsController(OpenAiService service) {
     this.service = service;
   }
 
