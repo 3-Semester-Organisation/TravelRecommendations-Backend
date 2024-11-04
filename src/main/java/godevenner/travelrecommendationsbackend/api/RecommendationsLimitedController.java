@@ -1,7 +1,7 @@
-package com.example.chatgptjokes.api;
+package godevenner.travelrecommendationsbackend.api;
 
-import com.example.chatgptjokes.dtos.MyResponse;
-import com.example.chatgptjokes.service.OpenAiService;
+import godevenner.travelrecommendationsbackend.dtos.MyResponse;
+import godevenner.travelrecommendationsbackend.service.OpenAiService;
 import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Bucket;
 import io.github.bucket4j.Refill;
@@ -19,9 +19,10 @@ import java.util.concurrent.ConcurrentHashMap;
  * This class handles fetching a joke via the ChatGPT API, but is IP-rate limited.
  */
 @RestController
+//Todo edit this at some point
 @RequestMapping("/api/v1/jokelimited")
 @CrossOrigin(origins = "*")
-public class JokeLimitedController {
+public class RecommendationsLimitedController {
 
   @Value("${app.bucket_capacity}")
   private int BUCKET_CAPACITY;
@@ -40,7 +41,7 @@ public class JokeLimitedController {
    * The controller called from the browser client.
    * @param service
    */
-  public JokeLimitedController(OpenAiService service) {
+  public RecommendationsLimitedController(OpenAiService service) {
     this.service=service;
   }
 
@@ -81,6 +82,6 @@ public class JokeLimitedController {
       throw new ResponseStatusException(HttpStatus.TOO_MANY_REQUESTS, "Too many requests, try again later");
     }
     // Otherwise request a joke and return the response.
-    return service.makeRequest(about, JokeController.SYSTEM_MESSAGE);
+    return service.makeRequest(about, RecommendationsController.SYSTEM_MESSAGE);
   }
 }

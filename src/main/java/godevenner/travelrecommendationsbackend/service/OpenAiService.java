@@ -1,8 +1,8 @@
-package com.example.chatgptjokes.service;
+package godevenner.travelrecommendationsbackend.service;
 
-import com.example.chatgptjokes.dtos.ChatCompletionRequest;
-import com.example.chatgptjokes.dtos.ChatCompletionResponse;
-import com.example.chatgptjokes.dtos.MyResponse;
+import godevenner.travelrecommendationsbackend.dtos.ChatCompletionRequest;
+import godevenner.travelrecommendationsbackend.dtos.ChatCompletionResponse;
+import godevenner.travelrecommendationsbackend.dtos.MyResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
